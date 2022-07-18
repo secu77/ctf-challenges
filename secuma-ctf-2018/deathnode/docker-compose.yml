@@ -1,0 +1,6 @@
+version: '3'
+services:
+  application:
+    build: application
+    ports:
+      - "7080:8888"

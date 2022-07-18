@@ -1,0 +1,2 @@
+openssl des3 -in flag.txt -out thisnotasecret.txt
+openssl des3 -d -in thisnotasecret.txt -out clear.txt -k darlene

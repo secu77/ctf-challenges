@@ -1,0 +1,44 @@
+version: '3'
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - ronscoffee
+  php:
+    build: php
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - ronscoffee
+  mysql:
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: somethingthatmustbesecret22
+      MYSQL_DATABASE: ronscoffee
+      MYSQL_USER: rons
+      MYSQL_PASSWORD: mylittleandsecretpenguin
+    ports:
+      - "3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./mysql/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    networks:
+      - ronscoffee
+  redis:
+    image: redis:alpine
+    volumes:
+      - redisdata:/data
+    networks:
+      - ronscoffee
+networks:
+  ronscoffee:
+    driver: "bridge"
+volumes:
+  redisdata:
+    driver: "local"
+  mysqldata:
+    driver: "local"

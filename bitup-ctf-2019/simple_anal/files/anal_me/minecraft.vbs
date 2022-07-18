@@ -1,0 +1,1 @@
+CreateObject("WScript.Shell").Popup "Pulsa aceptar para aceptar", 5, "CTF Bitup:", 0 + 64

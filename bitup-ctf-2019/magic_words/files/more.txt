@@ -1,0 +1,21 @@
+
+Cabecera que indica JPG:
+
+ffd8 ffe0 0010 4a46 4946 0001
+
+
+Cabecera de nuestro archivo:
+
+00000000: ffd8 ffe0 0010 4a46 4946 0001 0101 0060  ......JFIF.....`
+
+
+Cabecera después de la modificacion:
+
+00000000: 0101 0100 6000 6000 00ff db00 4300 0806  ....`.`.....C...
+
+
+Commandos para restaurarlo:
+
+echo -n -e '\xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46\x00\x01' > crazyheader
+file crazyheader
+cat crazyheader demo > packed.jpg

@@ -1,0 +1,7 @@
+"Tenemos que ayudar a la agente DiPierro, ha conseguido interceptar 3 mensajes de algunos usuarios, pero cada uno usa un cifrado distinto. ¿Puedes ayudarla? Se encontró un texto sin cifrar que decía: La union es la clave."
+
+BAnkS:ONSWG5LNMEYTQ62BIJ2WO===
+
+irVInG:Cf_V3j3eDhah_n
+
+ROboT:_K1qryi3

@@ -1,0 +1,28 @@
+version: '3'
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - ronscoffee
+  php:
+    build: php
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - ronscoffee
+  redis:
+    image: redis:alpine
+    volumes:
+      - redisdata:/data
+    networks:
+      - ronscoffee
+networks:
+  ronscoffee:
+    driver: "bridge"
+volumes:
+  redisdata:
+    driver: "local"

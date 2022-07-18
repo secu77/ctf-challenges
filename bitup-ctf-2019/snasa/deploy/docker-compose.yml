@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - snasa
+  php:
+    build: php
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - snasa
+networks:
+  snasa:
+    driver: "bridge"
