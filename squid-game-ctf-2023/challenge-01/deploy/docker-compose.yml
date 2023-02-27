@@ -1,0 +1,7 @@
+version: '3'
+services:
+  squid-game-chall-01:
+    build: .
+    container_name: squid-game-chall-01
+    ports:
+      - "8080:80"
